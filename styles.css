@@ -86,22 +86,24 @@ header {
 
     #G {
         margin: 0;
-        font-size: 6em;
+        font-size: 5.5em;
     }
 
     #i {
         margin: 0;
-        font-size: 7em;
+        font-size: 5.5em;
     }
 
     #a {
         margin: 0;
-        font-size: 8em;
+        font-size: 6.5em;
     }
 
     header h3 {
         padding: 0;
-        margin: 10px auto 10px;
+        margin: 5px auto;
+        gap: 0;
+        font-size: 1.3rem;
     }
 
     .classwork {
