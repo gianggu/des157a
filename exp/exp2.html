@@ -7,5 +7,72 @@
 </head>
 <body>
     
+    <h1>Experiment 2</h1>
+
+    <h2>Last Chance of Fortune</h2>
+
+
+    <p>
+        This is a game that will tell you your fortune! Your answers will determine your fate.  
+    </p>
+
+    <p>
+        Enter inspect mode and open your console to fully experience the game of fortune.
+    </p>
+
+
+    <script>
+
+        var firstChoice = prompt("You wake up secluded in an unfamiliar room. What is the first thing you do? A. Panic  B. Explore room", "Answer quick!").toLowerCase();
+
+        if (firstChoice === 'panic' || firstChoice === 'a') {
+
+            console.log("You hyperventilated and died. Stay calm next time.");
+
+        }   else if (firstChoice == 'explore room' || firstChoice == 'B') {
+
+            for (let i = 1; i <= 8; i++) {
+                
+                console.log(`Card ${i}`);
+            }
+
+            var secondChoice = prompt("You find cards laid out from 1-8. Which number are you picking? ");
+            
+                if (secondChoice ===  "1" || secondChoice ===  "3" || secondChoice ===  "5" || secondChoice ===  "7") {
+
+                    console.log('You have claimed mildly disappointing luck for the next 2 years. Sorry...');
+
+                }   else if (secondChoice ===  "2" || secondChoice ===  "4" || secondChoice ===  "6" || secondChoice ===  "8") {
+
+                    console.log('You have claimed good luck! Kind of. Like you may have a chance of gaining $100 today... tomorrow, or maybe not, perhaps.');
+                }
+
+        }   else {
+
+            console.log("ERROR: Answer with given options.")
+        }
+
+        console.log("Alright. I feel bad. You get one more chance of good luck.");
+
+        var colors = ["red", "blue", "yellow"];
+
+
+    const maxAttempts = 3;
+    let attempts = 0;
+
+    while (attempts < maxAttempts) {
+        const guess = prompt(`If you guess the PRIMARY color I am thinking of, you will win and gain 100,000 aura.\n\nWhat is your pick?`);
+
+        if (colors.includes(guess)) {
+            console.log("Congratulations! You won 100,000 aura!");
+        } else {
+            console.log(`Sorry, incorrect. Try again.`);
+            attempts++;
+        }
+    }
+
+console.log("Game over. Better luck next time! Hahahaaa");
+    
+    </script>
 </body>
 </html>
