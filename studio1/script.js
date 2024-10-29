@@ -11,6 +11,8 @@ startBtn.addEventListener('click', function(event) {
     event.preventDefault();
     game_start.className = "hidden";
     myForm.className = "showing";
+    document.body.style.backgroundImage = `url('images/community-center.jpg')`;
+
 })
 
 
