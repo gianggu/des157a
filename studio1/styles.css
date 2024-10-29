@@ -7,17 +7,33 @@
 
 }
 
+
+/*  Notes:
+
+- Create mult moving cloud divs
+- Insert answers with sentences
+- add different backgrounds
+- Overlay transition
+*/
+
+
 .showing {
     display: block;
+    visibility: visible;
+    opacity: 1;
+    
 }
 
 .hidden {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
 }
 
 body {
-    background-image: url('../studio1/images/community-center.jpg');
-    background-size: cover ;
+    background-image: url('images/community-center.jpg');
+    background-size: cover;
+    background-size: 100vw;
     font-family: "stardew_valleyregular", Arial, sans-serif;
     font-size: 1.7rem;
 }
@@ -33,18 +49,23 @@ img {
     background-image: url('images/stardew_madlibs.png');
     background-size: cover;
     box-sizing: border-box; 
-    width: 1000px;
-    height: 467px;
+    width: 900px;
+    height: 421px;
     justify-self: center;
     margin-top: 100px;
 }
 
 #game_start div:hover {
-background-image: url('images/stardew_madlibs_click.png');
+    background-image: url('images/stardew_madlibs_hover.png');
+    width: 900px;
+    height: 421px;
 }
 
 
 form.showing {
+    position: absolute;
+    top: 5%;
+    left: 20%;
     justify-self: center;
     background-image: url('images/questions_frame.png');
     width: 850px;
@@ -52,8 +73,11 @@ form.showing {
     background-size:contain;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 30px;
+    /* gap: 10px; */
+    /* margin-top: 30px; */
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
 }
 
 label {
@@ -67,4 +91,21 @@ label {
     background-color:bisque;
     border: 4px solid #6f3e14;;
     /* how do i make the button not a part of the grid? */
+}
+
+#submit:hover {
+    background-color: rgb(255, 250, 234);
+    border-color: #ecdd39;
+}
+
+#madLibs {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    background-image: url('images/questions_frame.png');
+    width: 850px;
+    height: 747px;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
 }
