@@ -13,54 +13,58 @@
 </head>
 
   <body>
-      <header id="title_start" >
-        <div id="title_overlay">
-        	<h1> Stardew Madlibs</h1>
-		</div>
-		<div id="start_overlay">
-			<h2>START</h2>
-		</div>
+    <header id="game_start" class="showing">
+        	<div></div>
 	</header>
 
-	  <main>
-		<form> 
+	<main>
+		<form class="hidden"> 
+			<!-- Add class="hidden" once done editing css -->
 			<!-- This will be a form that overlays-->
-			<label for ="q1">Action verb</label><br>
-			<input type ="text" name="q1" id="q1"> <br>
+			
+			<label>Action verb<br>
+			<input type ="text" name="q1" id="q1"></label> 
 
-			<label for ="q2">Action verb</label><br>
-			<input type ="text" name="q2" id="q2"> <br>
+			<label>Action verb<br>
+			<input type ="text" name="q2" id="q2"></label>
 
-			<label for ="q3">Continuous verb (-ing)</label><br>
-			<input type ="text" name="q3" id="q3"> <br>
+			<label>Continuous verb (-ing)<br>
+			<input type ="text" name="q3" id="q3"></label>
 
-			<label for ="q4">Adjective</label><br>
-			<input type ="text" name="q4" id="q4"> <br>
+			<label>Adjective<br>
+			<input type ="text" name="q4" id="q4"></label>
 
-			<label for ="q5">Verb</label><br>
-			<input type ="text" name="q5" id="q5"> <br>
+			<label>Verb<br>
+			<input type ="text" name="q5" id="q5"></label>
 
-			<label for ="q6">Verb</label><br>
-			<input type ="text" name="q6" id="q6"> <br>
+			<label>Verb<br>
+			<input type ="text" name="q6" id="q6"></label>
 
-			<label for ="q7">Object noun</label><br>
-			<input type ="text" name="q7" id="q7"> <br>
+			<label>Object noun<br>
+			<input type ="text" name="q7" id="q7"> </label>
 
-			<label for ="q8">Object noun</label><br>
-			<input type ="text" name="q8" id="q8"> <br>
+			<label>Object noun<br>
+			<input type ="text" name="q8" id="q8"> </label>
 
-			<label for ="q9">Noun</label><br>
-			<input type ="text" name="q9" id="q9"> <br>
+			<label>Noun<br>
+			<input type ="text" name="q9" id="q9"></label>
 
-			<label for ="q10">Noun</label><br>
-			<input type ="text" name="q10" id="q10"> <br>
+			<label>Noun<br>
+			<input type ="text" name="q10" id="q10"></label>
 
-			<input type = "submit">
+			<input id="submit" type = "submit" value="send">
 		</form>
 
+		
+	<section id="madLibs" class="hidden">
+
+
+
+
+	</section>
 
 		
-	  </main>
+	</main>
 
   </body>
 
