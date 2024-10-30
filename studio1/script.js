@@ -83,8 +83,17 @@ myForm.addEventListener('submit', function(event) {
     } else {
 
         myForm.className = "hidden";
+        document.body.style.backgroundImage = `url(images/my-home.jpg)`;
+        results = `I start my day off at 6 o’ clock , with my first task being to ${q1} the chickens and ${q2} the cows.
+		I carry my grandfather’s dying wish for me to continue his ${q3} legacy, and I do it every day.
+		My ${q4} livestock all (verb) me each morning because I (verb) them.
+		Making a (object noun) in this town hasn’t been easy, but thankfully, I have (noun) to keep me at peace.
+		Another way I make money is by mining. This town has caves with (plural noun) and ores. 
+		I’ve had to learn how to use a (noun) for a weapon because there are so many (adjective) monsters down there!
+		There are secrets about this town, and I’ve seen some things… Like (adjective) slimes and (adjective) ghosts. I swear!    `;
+        madLibs.innerHTML = results;
         madLibs.className = "showing";
-        results = (`You typed the words ${q1} ${q2} ${q3} ${q4}`);
+        
         // This empties input field after submission
         document.querySelector('#q1').value = '';
         document.querySelector('#q2').value = '';
@@ -106,7 +115,7 @@ myForm.addEventListener('submit', function(event) {
 
     }
 
-    madLibs.innerHTML = results;
+    
     // madLibs.style.
     // madLibs.createTextNode('p');
     // madLibs.appendChild.
