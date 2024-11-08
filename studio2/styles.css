@@ -1,0 +1,15 @@
+img {
+    display: block;
+}
+
+.noborder {
+    border-radius: 0px;
+    
+}
+.border {
+    border-radius: 100%;
+    
+    transition: 6s;
+    /* add rotation */
+    
+}
