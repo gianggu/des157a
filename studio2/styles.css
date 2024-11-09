@@ -2,6 +2,39 @@ img {
     display: block;
 }
 
+#merge_right, #merge_middle, #merge_left {
+    width: 100%;
+    overflow-x: hidden;
+
+    margin-bottom: 20px;
+}
+
+.slider {
+    display: flex;
+    position: absolute;
+    top:0;
+    left: 0;
+    /* height: 200px; */
+}
+
+#second_group {
+    position: fixed;
+    top: 1000px; 
+
+}
+
+.slider img {
+    height: 100%;
+    display: block;
+    margin-right: 200px;
+}
+
+
+
+
+
+
+
 .noborder {
     border-radius: 0px;
     
