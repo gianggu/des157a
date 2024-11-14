@@ -11,7 +11,7 @@ header {
 
 
 main {
-    height: calc(100vh - 80 px);
+    height: calc(100vh - 80px);
     display: grid;
     position: relative;
 }
@@ -56,12 +56,13 @@ img {
 }
 
 .animateLeftImg {
-    transition: moveLeftImg 2s forwards;
+    animation: moveLeftImg 2s ease-in-out forwards;
 }
 
 .animateRightImg {
-    transition: moveRightImg 2s forwards;
+    animation: moveRightImg 2s ease-in-out forwards;
 }
+
 
 
 
