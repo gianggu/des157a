@@ -4,58 +4,69 @@
     console.log('running js');
     
     const enterLeft = [
-        'left1.png',
-        'left2.png',
-        'left3.png'
+        'left1.jpg',
+        'left2.jpg',
+        'left3.jpg'
     ];
 
     const enterRight = [
-        'right1.png',
-        'right2.png',
-        'right3.png'
+        'right1.jpg',
+        'right2.jpg',
+        'right3.jpg'
     ];
+
+    const textInfo = [
+        'Now: Flying',
+        'Now: Eating ',
+        'Now: ??'
+    ];
+
 
     const main = document.querySelector('main');
     const info = document.querySelector('header p');
 
-    let leftImage, rightImage = 0;
-    const leftSlider = document.getElementById("left_slider");    const rightSlider = document.getElementById("right_slider");
+    const leftSlider = document.getElementById("left_slider");    
+    const rightSlider = document.getElementById("right_slider");
 
+    let counter  = 0;
     
-    document.getElementById('next').addEventListener('click', nextSlide);
-
-    function nextSlide() {
+    function changeSlide(leftSide, rightSide) {
         console.log('running function');
-        leftImage++; 
-        rightImage++;
-        //increment the counter
-        //set the source for the slide to the next image
-        if (leftImage > enterLeft.length - 1 && rightImage > enterRight.length - 1) {
-            //If the user is at the end of the array...
-            leftImage = 0; 
-            rightImage = 0;
-        }
-        //how can i best write my js so I can have both sides enter at the same time, and also increment when the "next" button is pressed?
-        leftSlider.src = `images/${enterLeft[leftImage]}`;
-        rightSlider.src = `images/${enterRight[rightImage]}`;
+        const leftbg = leftSide[counter];
+        const rightbg = rightSide[counter];
+        const center = rightSide[counter];
 
+        leftSlider.style.backgroundImage = `url(images/${leftbg})`;
+        rightSlider.style.backgroundImage = `url(images/${rightbg})`;
+
+        setTimeout(function(){
+            //animate in the photos
+            leftSlider.className = "animateLeftImg";
+            rightSlider.className = "animateRightImg";
+            //wait 3 seconds
+            setTimeout(function(){
+                //create a photo element
+                const photo = document.createElement('img');
+                //assign the src
+                photo.src = `images/${center}`;
+                //add the class
+                photo.className = 'placed';
+                //put the photo in the main element
+                main.appendChild(photo);
+                //change the text at the top of the page...
+                info.textContent = textInfo[counter];
+            }, 3000);
+        }, 2000);
     }
 
-    document.getElementById('previous').addEventListener('click', previousSlide);
-
-    function previousSlide() {
-        leftImage--; 
-        rightImage--; 
-        //decrement the counter
-        //set the source for the slide to the next image
-
-        if (leftImage < 0 && rightImage < 0) {
-            //If the user is at the beginning of the array...
-            leftImage = enterLeft.length - 1;
-            rightImage = enterRight.length - 1;
-        }
-        leftSlider.src = `images/${enterLeft[leftImage]}`;
-        rightSlider.src = `images/${enterRight[rightImage]}`;
-    }
+    document.getElementById('next').addEventListener('click', function() {
+        counter++;
+        changeSlide(enterLeft, enterRight);
+    });
+    
+    document.getElementById('previous').addEventListener('click', function() {
+        counter --;
+        changeSlide(enterLeft, enterRight);
+    });
 
 })();
