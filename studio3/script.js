@@ -55,10 +55,49 @@
         console.log(gameData);
 
         if (gameData.rollSum == 2) {
-            console.log("Snake Eyes!")
+            game.innerHTML += '<p>Oh snap, snake eyes!</p>';
+            gameData.score[gameData.index] = 0 ;
+            gameData.index ? (gameData.index  = 0) : (gameData.index = 1);
+            showCurrentScore();
+            setTimeout(setUpTurn, 2000);
 
+        }
+        else if (gameData.roll1 == 1 || gameData.roll2 == 1) {
+            gameData.index ? (gameData.index  = 0) : (gameData.index = 1);
+            game.innerHTML += `<p>Sorry one of your rolls was a one. Switching to ${gameData.players[gameData.index]}</p>`;
+            setTimeout(setUpTurn, 2000);
+        }
+        else {
+            gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
+            actionArea.innerHTML = '<button id="rollagain">Roll again</button> or <button id="pass">Pass</button>';
+
+            document.getElementById('rollagain').addEventListener('click', function() {
+                setUpTurn();
+            });
+
+            document.getElementById('pass').addEventListener('click', function() {
+                gameData.index ? (gameData.index  = 0) : (gameData.index = 1);
+                setUpTurn();
+            });
+
+            checkWinningCondition();
         }
     }
 
+    function checkWinningCondition() {
+        if(gameData.score[gameData.index] > gameData.gameEnd) {
+            score.innerHTML = `<h2>${gameData.players[gameData.index]}wins with ${gameData.score[gameData.index]} points!</h2>`;
+
+            actionArea.innerHTML = '';
+            document.getElementById('quit').innerHTML = "starta new game?";
+        } 
+        else {
+            showCurrentScore();  
+        }
+    }
+
+    function showCurrentScore() {
+        score.innerHTML = `<p>The score is currently <strong>${gameData.players[0]} ${gameData.score[0]} and ${gameData.players[1]} ${gameData.score[1]}</strong></p>`;        
+    }
 
 })();

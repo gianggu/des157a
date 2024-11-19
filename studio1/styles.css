@@ -33,7 +33,7 @@
 body {
     background-image: url('images/startscreen.png');
     background-size: cover;
-    background-size: 100vw;
+    background-size: 97vw;
     font-family: "stardew_valleyregular", Arial, sans-serif;
     font-size: 1.7rem;
 }
@@ -53,6 +53,7 @@ img {
     height: 421px;
     justify-self: center;
     margin-top: 100px;
+    margin-bottom: 500px;
 }
 
 #game_start div:hover {
@@ -61,22 +62,31 @@ img {
     height: 421px;
 }
 
+/* #back_clouds {
+    
+}
+
+#small_middle_cloud {
+
+}
+
+#top_cloud {
+
+} */
 
 form.showing {
     position: absolute;
-    top: 5%;
+    top: 2%;
     left: 20%;
     justify-self: center;
     background-image: url('images/questions_frame.png');
     width: 850px;
     height: 747px;
-    background-size: contain;
+    background-size: cover;
     padding: 50px 50px 50px 100px;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* gap: 10px; */
-    /* margin-top: 30px; */
     transition-property: opacity, visibility;
     transition-duration: 1s;
     transition-timing-function: ease;
@@ -105,7 +115,7 @@ label {
 
 #madLibs {
     position: absolute;
-    top: 5%;
+    top: 2%;
     left: 20%;
     background-image: url('images/questions_frame.png');
     background-size: contain;
