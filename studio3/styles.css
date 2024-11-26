@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    font-family: monospace;
+    color: aqua;
+    margin: 8em;
+    justify-self: center;
+}
+
+#gamecontrol {
+    justify-items: center;
+    font-size: 30px;
+    border: 2px solid white;
+    padding: 5em 8em;
+}
+
+button {
+    background-color: yellow;
+    padding: 1em 2em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
