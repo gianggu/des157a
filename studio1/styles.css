@@ -38,7 +38,11 @@ body {
     font-size: 1.7rem;
 }
 
-
+.community-center {
+    background-image: url('images/community-center.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 img {
     max-width: 100%;
     display: block;

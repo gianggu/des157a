@@ -21,7 +21,7 @@ img {
     /* width: 50%; */
 }
 
-#right-slider, #left-slider {
+#right_slider, #left_slider {
     /* mix-blend-mode: multiply; */
    /*  mix-blend-mode: screen; */
    /*  mix-blend-mode: overlay; */
@@ -41,25 +41,24 @@ img {
     /* height: 200px; */
 }
 
-#left-slider {
-    
+#left_slider {
     right: -100vw;
     background-size: cover;
     background-position: center;
 }
 
-#right-slider {
+#right_slider {
     left: 100vw;
     background-size: cover;
     background-position: center;
 }
 
 .animateLeftImg {
-    animation: moveLeftImg 2s ease-in-out forwards;
+    animation: move-left 2s ease-in-out forwards;
 }
 
 .animateRightImg {
-    animation: moveRightImg 2s ease-in-out forwards;
+    animation: move-right 6s ease-in-out forwards;
 }
 
 .placed {
@@ -74,18 +73,35 @@ img {
 }
 
 
-@keyframes moveLeftImg {
-    0% { left: -100vw; }
-    50% { left: 0; }
-    100% { right: 100vw; }
+@keyframes move-left {
+    0% {
+      left: 100%;
+    }
+    33.33% {
+      left: 0;
+    }
+    66.67% {
+      left: 0;
+    }
+    100% {
+      left: -100%;
+    }
+  }
 
-}
-
-@keyframes moveRightImg {
-    0% { right: -100vw; }
-    50% { right: 0; }
-    100% { right: 100vw; }
-}
+@keyframes move-right {
+    0% {
+      left: -100%;
+    }
+    33.33% {
+      left: 0;
+    }
+    66.67% {
+      left: 0;
+    }
+    100% {
+      left: 100%;
+    }
+  }
 
 @keyframes fadeIn {
     0% { opacity: 0; }

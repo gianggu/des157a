@@ -58,14 +58,35 @@
             }, 3000);
         }, 2000);
     }
+    changeSlide(enterLeft, enterRight);
+
 
     document.getElementById('next').addEventListener('click', function() {
-        counter++;
+        if (counter == enterLeft.length) {
+            counter = 0;
+        }
+        else {
+            counter++;
+        }
+        
+        document.querySelector('.placed').remove();
+        leftSlider.removeAttribute('class');
+        rightSlider.removeAttribute('class');
+
         changeSlide(enterLeft, enterRight);
     });
     
     document.getElementById('previous').addEventListener('click', function() {
-        counter --;
+        if (counter < 0) {
+            counter = enterLeft.length - 1;
+        }
+        else {
+            counter--;
+        }
+
+        document.querySelector('.placed').remove();
+        leftSlider.removeAttribute('class');
+        rightSlider.removeAttribute('class');
         changeSlide(enterLeft, enterRight);
     });
 

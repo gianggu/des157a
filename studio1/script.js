@@ -5,13 +5,15 @@ console.log("readin js");
 const madLibs = document.querySelector('#madLibs');
 const myForm = document.querySelector('form');
 const startBtn = document.querySelector('#game_start div');
+const body = document.querySelector('body');
 
 startBtn.addEventListener('click', function(event) {
 
     event.preventDefault();
     game_start.className = "hidden";
     myForm.className = "showing";
-    document.body.style.backgroundImage = `url('images/community-center.jpg')`;
+    // document.body.style.backgroundImage = `url('images/community-center.jpg')`;
+    body.className = "community-center";
 
 })
 
