@@ -23,6 +23,7 @@
         
         console.log(gameData.index);
         gameData.index = Math.round(Math.random() );
+        gameControl.style.border = 'none';
         gameControl.innerHTML = '<h2>The Game Has Started</h2>';
         gameControl.innerHTML += '<button id="quit">Wanna Quit?</button';
 
