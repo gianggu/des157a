@@ -11,6 +11,9 @@ body {
     font-size: 30px;
     border: 2px solid white;
     padding: 5em 8em;
+    background-image: url('images/dice-bg.png');
+    background-size:contain;
+    background-position: center;
 }
 
 button {
@@ -21,4 +24,8 @@ button {
 
 #game {
     font-size: 20px;
+}
+
+img {
+    display: block;
 }
