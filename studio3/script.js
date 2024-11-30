@@ -24,25 +24,26 @@
         console.log(gameData.index);
         gameData.index = Math.round(Math.random() );
         gameControl.style.border = 'none';
-        gameControl.innerHTML = '<h2>The Game Has Started</h2>';
-        gameControl.innerHTML += '<button id="quit">Wanna Quit?</button';
+        gameControl.innerHTML = '<h2>Collect the stars!</h2>';
+        gameControl.innerHTML += '<button id="roll">Roll the Dice</button>';
 
-        document.getElementById('quit').addEventListener('click', function() {
-            location.reload();
-        });
-
-        console.log('set up the turn!');
-        setUpTurn();
-    });
-    
-    function setUpTurn() {
-        game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
-        actionArea.innerHTML = '<button id="roll">Roll the Dice</button>';
         document.getElementById('roll').addEventListener('click', function() {
 
             console.log('Roll the dice!');
             throwDice();
+            setUpTurn();
+            console.log('set up the turn!');
         });
+    });
+    
+    function setUpTurn() {
+        game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
+        actionArea.innerHTML = '<button id="quit">Wanna Quit?</button';
+
+        document.getElementById('quit').addEventListener('click', function() {
+            location.reload();
+        });
+        
     }
 
     function throwDice() {
@@ -56,7 +57,7 @@
         console.log(gameData);
 
         if (gameData.rollSum == 2) {
-            game.innerHTML += '<p>Oh snap, snake eyes!</p>';
+            game.innerHTML += '<p>Help! Two black holes! Sucking up... your stars...</p>';
             gameData.score[gameData.index] = 0 ;
             gameData.index ? (gameData.index  = 0) : (gameData.index = 1);
             showCurrentScore();
@@ -65,7 +66,7 @@
         }
         else if (gameData.roll1 == 1 || gameData.roll2 == 1) {
             gameData.index ? (gameData.index  = 0) : (gameData.index = 1);
-            game.innerHTML += `<p>Sorry one of your rolls was a one. Switching to ${gameData.players[gameData.index]}</p>`;
+            game.innerHTML += `<p>Sorry, you caught a black hole. Switching to ${gameData.players[gameData.index]}</p>`;
             setTimeout(setUpTurn, 2000);
         }
         else {
@@ -87,10 +88,12 @@
 
     function checkWinningCondition() {
         if(gameData.score[gameData.index] > gameData.gameEnd) {
-            score.innerHTML = `<h2>${gameData.players[gameData.index]}wins with ${gameData.score[gameData.index]} points!</h2>`;
+            score.innerHTML = `<h2>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
 
             actionArea.innerHTML = '';
-            document.getElementById('quit').innerHTML = "starta new game?";
+            document.getElementById('quit').innerHTML = "start a new game?";
+
+            gameControl.innerHTML = '';
         } 
         else {
             showCurrentScore();  
@@ -98,7 +101,8 @@
     }
 
     function showCurrentScore() {
-        score.innerHTML = `<p>The score is currently <strong>${gameData.players[0]} ${gameData.score[0]} and ${gameData.players[1]} ${gameData.score[1]}</strong></p>`;        
+        score.innerHTML = `<h1><strong>SCORE:<br> </strong> 
+        ${gameData.players[0]} - ${gameData.score[0]} <br> ${gameData.players[1]} - ${gameData.score[1]}</h1>`;        
     }
 
 })();
