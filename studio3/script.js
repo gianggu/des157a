@@ -21,23 +21,26 @@
 
     startGame.addEventListener('click', function() {
         
+        const startSound = new Audio('sounds/startSound.mp3');
+        startSound.play();
+
         console.log(gameData.index);
         gameData.index = Math.round(Math.random() );
         gameControl.style.border = 'none';
         gameControl.innerHTML = '<h2>Collect the stars!</h2>';
-        gameControl.innerHTML += '<button id="roll">Roll the Dice</button>';
+        gameControl.innerHTML += '<button id="roll">Start searching</button>';
+        game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
 
         document.getElementById('roll').addEventListener('click', function() {
 
-            console.log('Roll the dice!');
             throwDice();
+            console.log('Roll the dice!');
             setUpTurn();
             console.log('set up the turn!');
         });
     });
     
     function setUpTurn() {
-        game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
         actionArea.innerHTML = '<button id="quit">Wanna Quit?</button';
 
         document.getElementById('quit').addEventListener('click', function() {
@@ -57,6 +60,9 @@
         console.log(gameData);
 
         if (gameData.rollSum == 2) {
+            const blackHoleSound = new Audio('sounds/blackHoleSound.mp3');
+            blackHoleSound.play();
+
             game.innerHTML += '<p>Help! Two black holes! Sucking up... your stars...</p>';
             gameData.score[gameData.index] = 0 ;
             gameData.index ? (gameData.index  = 0) : (gameData.index = 1);
@@ -65,6 +71,9 @@
 
         }
         else if (gameData.roll1 == 1 || gameData.roll2 == 1) {
+            const blackHoleSound = new Audio('sounds/blackHoleSound.mp3');
+            blackHoleSound.play();
+
             gameData.index ? (gameData.index  = 0) : (gameData.index = 1);
             game.innerHTML += `<p>Sorry, you caught a black hole. Switching to ${gameData.players[gameData.index]}</p>`;
             setTimeout(setUpTurn, 2000);
@@ -88,8 +97,8 @@
 
     function checkWinningCondition() {
         if(gameData.score[gameData.index] > gameData.gameEnd) {
-            score.innerHTML = `<h2>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
-
+            score.innerHTML = `<h1>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h1>`;
+            score.className = "center";
             actionArea.innerHTML = '';
             document.getElementById('quit').innerHTML = "start a new game?";
 
