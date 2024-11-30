@@ -27,6 +27,7 @@
         console.log(gameData.index);
         gameData.index = Math.round(Math.random() );
         gameControl.style.border = 'none';
+        gameControl.style.backgroundImage = 'none';
         gameControl.innerHTML = '<h2>Collect the stars!</h2>';
         gameControl.innerHTML += '<button id="roll">Start searching</button>';
         game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
@@ -75,11 +76,14 @@
             blackHoleSound.play();
 
             gameData.index ? (gameData.index  = 0) : (gameData.index = 1);
-            game.innerHTML += `<p>Sorry, you caught a black hole. Switching to ${gameData.players[gameData.index]}</p>`;
+            game.innerHTML = `<p>Sorry, you caught a black hole. Switching to ${gameData.players[gameData.index]}</p>`;
             setTimeout(setUpTurn, 2000);
         }
         else {
             gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
+            const twinkleSound = new Audio('sounds/twinkleSound.mp3');
+            twinkleSound.play();
+            
             actionArea.innerHTML = '<button id="rollagain">Roll again</button> or <button id="pass">Pass</button>';
 
             document.getElementById('rollagain').addEventListener('click', function() {
