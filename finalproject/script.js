@@ -12,16 +12,16 @@ startBtn.addEventListener('click', function(event) {
     event.preventDefault();
     game_start.className = "hidden";
     myForm.className = "showing";
-    // document.body.style.backgroundImage = `url('images/community-center.jpg')`;
-    body.className = "community-center";
-
+    document.body.style.backgroundImage = `url('images/community-center1.jpg')`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundRepeat = 'no-repeat';
 })
 
 
 myForm.addEventListener('submit', function(event) {
 
     event.preventDefault();
-
+// advnced madlibs hw to make it more concise
     const q1 = document.querySelector('#q1').value;
         console.log(q1);
     const q2 = document.querySelector('#q2').value;
@@ -31,7 +31,6 @@ myForm.addEventListener('submit', function(event) {
     const q6 = document.querySelector('#q6').value;
     const q7 = document.querySelector('#q7').value;
     const q8 = document.querySelector('#q8').value;
-    const q9 = document.querySelector('#q9').value;
     
     let results;
 
@@ -76,14 +75,10 @@ myForm.addEventListener('submit', function(event) {
         results = "Please provide an adjective";
         document.querySelector('#q8').focus();    
 
-    } else if (q9 =='') {
-
-        results = "Please provide an adjective";
-        document.querySelector('#q9').focus();    
     } else {
 
         myForm.className = "hidden";
-        // document.style.backgroundImage = `url(images/my-home.jpg)`;
+        document.body.style.backgroundImage = `url(images/my-home.jpeg)`;
         body.removeAttribute('community-center');
         body.className = "my-home";
         results = `
@@ -109,7 +104,6 @@ myForm.addEventListener('submit', function(event) {
         document.querySelector('#q6').value = '';
         document.querySelector('#q7').value = '';
         document.querySelector('#q8').value = '';
-        document.querySelector('#q9').value = '';
 
 
         // const textFields = document.querySelectorAll('input[type=text]');

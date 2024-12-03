@@ -53,7 +53,7 @@ body {
     height: 421px;
 }
 
-header {
+#game_start {
     position: fixed;
     top:0;
     left:0;
@@ -83,23 +83,31 @@ img {
     display: block;
 }
 
-/* #back_clouds {
-    
+.clouds {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+#back_clouds {
+    top: 100px;
+    left: 700px;
 }
 
 #small_middle_cloud {
-
+    top: 50px;
+    left: 900px;
 }
 
 #top_cloud {
+    top: 200px;
+    left: 500px;
+}
 
-} */
-
-form.showing {
+/* form.showing {
     position: absolute;
-    top: 2%;
-    left: 20%;
-    justify-self: center;
+    top: 20vh;
+    left: 30vw;
     background-image: url('images/questions_frame.png');
     width: 850px;
     height: 747px;
@@ -108,6 +116,30 @@ form.showing {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+} */
+
+form.showing {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85vw;
+    max-width: 750px;
+    height: 90vh;
+    max-height: 700px;
+    background-image: url('images/questions_frame.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
     transition-property: opacity, visibility;
     transition-duration: 1s;
     transition-timing-function: ease;
@@ -122,7 +154,6 @@ label {
 #submit {
     width: 150px;
     height: 50px;
-    /* align-self: center; */
     display: block;
     margin: auto;
     background-color:bisque;
