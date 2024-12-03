@@ -9,7 +9,7 @@
     const actionArea = document.querySelector('#actions');
 
     const gameData = {
-        dice: ['images/1star.jpg', 'images/2star.jpg', 'images/3star.jpg', 'images/4star.jpg', 'images/5star.jpg', 'images/6die.jpg'],
+        dice: ['images/1star.png', 'images/2star.png', 'images/3star.png', 'images/4star.png', 'images/5star.png', 'images/6star.png'],
         players: ['player 1', 'player 2'],
         score: [0, 0],
         roll1: 0,

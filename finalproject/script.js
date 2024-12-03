@@ -86,13 +86,17 @@ myForm.addEventListener('submit', function(event) {
 
         myForm.className = "hidden";
         document.body.style.backgroundImage = `url(images/my-home.jpg)`;
-        results = `I start my day off at 6 o’ clock , with my first task being to ${q1} the chickens and ${q2} the cows.
-		I carry my grandfather’s dying wish for me to continue his ${q3} legacy, and I do it every day.
-		My ${q4} livestock all (verb) me each morning because I (verb) them.
-		Making a (object noun) in this town hasn’t been easy, but thankfully, I have (noun) to keep me at peace.
-		Another way I make money is by mining. This town has caves with (plural noun) and ores. 
-		I’ve had to learn how to use a (noun) for a weapon because there are so many (adjective) monsters down there!
-		There are secrets about this town, and I’ve seen some things… Like (adjective) slimes and (adjective) ghosts. I swear!    `;
+        results = `
+        Dear friend, I have much to update you on.
+        Since moving here, I start my day off at 6 o’ clock , with my first task being to ${q1} the chickens and ${q2} the cows.
+        Recently, I have taken a liking to Haley despite her ${q3} personality and interest in ${q4}.
+        One problem though, I'm already married to Elliot! Our ${q5} is very romantic, but I crave Haley's spice.
+        I know it isn't right, but I gift her ${q6} every day to win her love...
+        The mayor once caught us ${q7}, but he won't say anything because I know of his relationship with Maggie! His ${q8} are in her room. Haha! 
+        
+        It's quite spicy here in Pelican Town ;)
+		
+        `;
         madLibs.innerHTML = results;
         madLibs.className = "showing";
         
