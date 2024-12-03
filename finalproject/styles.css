@@ -21,40 +21,20 @@
     display: block;
     visibility: visible;
     opacity: 1;
-    
+    position: absolute;
 }
 
 .hidden {
     /* display: none; */
     visibility: hidden;
     opacity: 0;
+    z-index: -1;
 }
 
 body {
-    background-image: url('images/startscreen.png');
-    background-size: cover;
-    background-size: 97vw;
     font-family: "stardew_valleyregular", Arial, sans-serif;
     font-size: 1.7rem;
 }
-
-.community-center {
-    background-image: url('images/community-center.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.my-home {
-    background-image: url('images/my-home.jpeg');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
 
 #game_start div {
     background-image: url('images/stardew_madlibs.png');
@@ -71,6 +51,36 @@ img {
     background-image: url('images/stardew_madlibs_hover.png');
     width: 900px;
     height: 421px;
+}
+
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background-size: cover;
+    background-image: url('images/startscreen.png');
+}
+/* remove this header when clicked or hidden n z-axis 0 */
+
+.community-center {
+    background-image: url('images/community-center.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.my-home {
+    background-image: url('images/my-home.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 /* #back_clouds {

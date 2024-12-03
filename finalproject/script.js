@@ -88,7 +88,7 @@ myForm.addEventListener('submit', function(event) {
         body.className = "my-home";
         results = `
         Dear ${q1},<br><br>I have much to update you on.
-        Since moving here, I have been very busy with settling down. I make a lot of money by ${q2}.`
+        Since moving here, I have been very busy with settling down. I make a lot of money by ${q2}.
         Recently, I have taken a liking to Haley despite her ${q3} personality and interest in ${q4}.
         One problem though, I'm already married to Elliot! Our ${q5} is very romantic, but I crave Haley's spice.
         I know it isn't right, but I gift her ${q6} every day to win her love...
