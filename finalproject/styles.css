@@ -43,6 +43,13 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.my-home {
+    background-image: url('images/my-home.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 img {
     max-width: 100%;
     display: block;

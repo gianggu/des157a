@@ -21,8 +21,6 @@ startBtn.addEventListener('click', function(event) {
 myForm.addEventListener('submit', function(event) {
 
     event.preventDefault();
-    alert('Form submitted');
-
 
     const q1 = document.querySelector('#q1').value;
         console.log(q1);
@@ -85,15 +83,17 @@ myForm.addEventListener('submit', function(event) {
     } else {
 
         myForm.className = "hidden";
-        document.body.style.backgroundImage = `url(images/my-home.jpg)`;
+        // document.style.backgroundImage = `url(images/my-home.jpg)`;
+        body.removeAttribute('community-center');
+        body.className = "my-home";
         results = `
-        Dear friend, I have much to update you on.
-        Since moving here, I start my day off at 6 o’ clock , with my first task being to ${q1} the chickens and ${q2} the cows.
+        Dear ${q1},<br><br>I have much to update you on.
+        Since moving here, I have been very busy with settling down. I make a lot of money by ${q2}.`
         Recently, I have taken a liking to Haley despite her ${q3} personality and interest in ${q4}.
         One problem though, I'm already married to Elliot! Our ${q5} is very romantic, but I crave Haley's spice.
         I know it isn't right, but I gift her ${q6} every day to win her love...
         The mayor once caught us ${q7}, but he won't say anything because I know of his relationship with Maggie! His ${q8} are in her room. Haha! 
-        
+
         It's quite spicy here in Pelican Town ;)
 		
         `;
