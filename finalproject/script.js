@@ -83,15 +83,21 @@ myForm.addEventListener('submit', function(event) {
         body.className = "my-home";
         results = `
         Dear ${q1},<br><br>I have much to update you on.
-        Since moving here, I have been very busy with settling down. I make a lot of money by ${q2}.
-        Recently, I have taken a liking to Haley despite her ${q3} personality and interest in ${q4}.
-        One problem though, I'm already married to Elliot! Our ${q5} is very romantic, but I crave Haley's spice.
-        I know it isn't right, but I gift her ${q6} every day to win her love...
-        The mayor once caught us ${q7}, but he won't say anything because I know of his relationship with Maggie! His ${q8} are in her room. Haha! 
-
-        It's quite spicy here in Pelican Town ;)
-		
+        Since moving here, I been very busy with getting the farm goin' that it's already been 2 years!
+        Recently, I've taken a likin' to Haley despite her ${q2} personality and interest in ${q3}.
+        One problem though, I'm already married to Elliot! Our ${q4} is very romantic, but I crave Haley's spice.
+        I know it ain't right, but I gift her ${q5} every day to win her love...
+        The mayor once caught us ${q6}, but he won't say anything because I know of his relationship with Maggie! His ${q7} are in her room. Haha! It's quite spicy 'ere in Pelican Town ;)
+        <br>
+        <br>
+        I've been wondering, how's that ${q8} problem of yours been doin'? Can't wait to hear back from ya! 
+        <br>
+        <br>
+        From,
+        <br> 
+        your ol' bud
         `;
+
         madLibs.innerHTML = results;
         madLibs.className = "showing";
         

@@ -165,7 +165,7 @@ label {
     border-color: #ecdd39;
 }
 
-#madLibs {
+/* #madLibs {
     position: absolute;
     top: 2%;
     left: 20%;
@@ -178,4 +178,26 @@ label {
     transition-property: opacity, visibility;
     transition-duration: 1s;
     transition-timing-function: ease-out;
+} */
+
+#madLibs {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85vw;
+    max-width: 750px;
+    height: 90vh;
+    max-height: 700px;
+    background-image: url('images/questions_frame.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 65px 45px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
 }
