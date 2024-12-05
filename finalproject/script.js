@@ -137,17 +137,74 @@
     const startBtn = document.querySelector('#stardew_madlibs');
     const body = document.querySelector('body');
 
+
+    function createReturnButton() {
+        // return to start button
+        const returnToStartBtn = document.createElement('button');
+        returnToStartBtn.textContent = "Return To Start";
+
+         // Position the button in the top-left corner of myForm
+         returnToStartBtn.style.position = 'absolute';
+         returnToStartBtn.style.top = '1em';
+         returnToStartBtn.style.left = '-10em';
+
+         myForm.appendChild(returnToStartBtn);
+         return returnToStartBtn;
+    }
+
+    function createBackBtn() {
+        const backBtn = document.createElement('button');
+        backBtn.textContent = "Back";
+        backBtn.className = "back-button";
+
+        backBtn.style.position = 'relative';
+        backBtn.style.top = 'vh/2';
+        backBtn.style.left = 'vw/3';
+
+        backBtn.addEventListener('click', function() {
+
+            const clickSound = new Audio('sounds/clickSound.mp3');
+            clickSound.play();
+
+            myForm.className = "showing";
+            madLibs.className = "hidden";
+        });
+
+        return backBtn;
+    }
+``
+
     startBtn.addEventListener('click', function(event) {
         event.preventDefault();
+
+        const clickSound = new Audio('sounds/clickSound.mp3');
+        clickSound.play();
+        
         game_start.className = "hidden";
         myForm.className = "showing";
+
+        const returnToStartBtn = createReturnButton();
+        
         document.body.style.backgroundImage = `url('images/community-center1.jpg')`;
         document.body.style.backgroundSize = 'cover';
         document.body.style.backgroundRepeat = 'no-repeat';
+
+        returnToStartBtn.addEventListener('click', function(event){
+
+            const clickSound = new Audio('sounds/clickSound.mp3');
+            clickSound.play();
+        
+            myForm.className = "hidden";
+            game_start.className = "showing";
+        });
     });
+
 
     myForm.addEventListener('submit', function(event) {
         event.preventDefault();
+
+        const clickSound = new Audio('sounds/clickSound.mp3');
+        clickSound.play();
 
         const q1 = document.querySelector('#q1').value;
         const q2 = document.querySelector('#q2').value;
@@ -216,6 +273,9 @@
             document.querySelector('#q6').value = '';
             document.querySelector('#q7').value = '';
             document.querySelector('#q8').value = '';
+
+            const backBtn = createBackBtn();
+            madLibs.appendChild(backBtn);
         }
     });
 })();

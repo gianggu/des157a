@@ -92,56 +92,6 @@ img {
     font-style: normal;
 }
 
-/* ... (keep your existing CSS styles) ... */
-/* 
-.cloud-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.cloud {
-    position: absolute;
-    width: auto;
-    height: auto;
-    z-index: -1;
-}
-
-@keyframes cloud-movement {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.cloud.back-cloud {
-    animation: cloud-movement 20s infinite ease-in-out;
-    animation-delay: 2s;
-    top: 100px;
-}
-
-.cloud.cloud-crowd {
-    animation: cloud-movement 18s infinite ease-in-out;
-    animation-delay: 1s;
-    top: 50px;
-}
-
-.cloud.small-middle-cloud {
-    animation: cloud-movement 22s infinite ease-in-out;
-    animation-delay: 3s;
-    top: 150px;
-}
-
-.cloud.top-cloud {
-    animation: cloud-movement 16s infinite ease-in-out;
-    animation-delay: 1s;
-    top: 200px;
-}
-
-/* ... (keep your existing styles) ... */
-
 #game_start {
     position: fixed;
     top: 0;
@@ -151,7 +101,6 @@ img {
     background-size: cover;
     background-image: url('images/startscreen.png');
 } */
-
 
 .cloud-container {
     position: relative;
@@ -260,25 +209,19 @@ label {
     border: 4px solid #6f3e14;;
 }
 
+button {
+    width: 200px;
+    height: 50px;
+    display: block;
+    margin: auto;
+    background-color:bisque;
+    border: 4px solid #6f3e14;;
+}
+
 #submit:hover {
     background-color: rgb(255, 250, 234);
     border-color: #ecdd39;
 }
-
-/* #madLibs {
-    position: absolute;
-    top: 2%;
-    left: 20%;
-    background-image: url('images/questions_frame.png');
-    background-size: contain;
-    box-sizing: border-box;
-    padding: 70px 100px 0 170px;
-    width: 850px;
-    height: 747px;
-    transition-property: opacity, visibility;
-    transition-duration: 1s;
-    transition-timing-function: ease-out;
-} */
 
 #madLibs {
     position: fixed;
