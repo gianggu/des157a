@@ -36,7 +36,7 @@ body {
     font-size: 1.7rem;
 }
 
-#game_start div {
+#stardew_madlibs {
     background-image: url('images/stardew_madlibs.png');
     background-size: cover;
     box-sizing: border-box; 
@@ -45,9 +45,10 @@ body {
     justify-self: center;
     margin-top: 100px;
     margin-bottom: 500px;
+    z-index: 1;
 }
 
-#game_start div:hover {
+#stardew_madlibs:hover {
     background-image: url('images/stardew_madlibs_hover.png');
     width: 900px;
     height: 421px;
@@ -83,25 +84,124 @@ img {
     display: block;
 }
 
-.clouds {
+@font-face {
+    font-family:'stardew_valleyregular';
+    src: url('../studio1/fonts/stardew_valley-webfont.woff2') format('woff2'),
+         url('../studio1/fonts/stardew_valley-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ... (keep your existing CSS styles) ... */
+/* 
+.cloud-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cloud {
     position: absolute;
-    top: 0;
+    width: auto;
+    height: auto;
     z-index: -1;
 }
 
-#back_clouds {
+@keyframes cloud-movement {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.cloud.back-cloud {
+    animation: cloud-movement 20s infinite ease-in-out;
+    animation-delay: 2s;
     top: 100px;
-    left: 700px;
 }
 
-#small_middle_cloud {
+.cloud.cloud-crowd {
+    animation: cloud-movement 18s infinite ease-in-out;
+    animation-delay: 1s;
     top: 50px;
-    left: 900px;
 }
 
-#top_cloud {
+.cloud.small-middle-cloud {
+    animation: cloud-movement 22s infinite ease-in-out;
+    animation-delay: 3s;
+    top: 150px;
+}
+
+.cloud.top-cloud {
+    animation: cloud-movement 16s infinite ease-in-out;
+    animation-delay: 1s;
     top: 200px;
-    left: 500px;
+}
+
+/* ... (keep your existing styles) ... */
+
+#game_start {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-image: url('images/startscreen.png');
+} */
+
+
+.cloud-container {
+    position: relative;
+    width: 100%;
+}
+
+.cloud {
+    position: absolute;
+    width: auto;
+    height: auto;
+
+    animation: cloud-movement 30s infinite linear;
+    z-index: -1;
+}
+
+@keyframes cloud-movement {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.cloud.back-cloud {
+    animation: cloud-movement 20s infinite ease-in-out;
+    animation-delay: 2s;
+    top: 100px;
+    left: -100%;
+}
+
+.cloud.cloud-crowd {
+    animation: cloud-movement 18s infinite ease-in-out;
+    animation-delay: 1s;
+    top: 50px;
+    left: -100%;
+}
+
+.cloud.small-middle-cloud {
+    animation: cloud-movement 22s infinite ease-in-out;
+    animation-delay: s;
+    top: 50px;
+    left: -100%;
+}
+
+.cloud.top-cloud {
+    animation: cloud-movement 16s infinite ease-in-out;
+    animation-delay: 1s;
+    top: 200px;
+    left: -100%;
 }
 
 /* form.showing {
