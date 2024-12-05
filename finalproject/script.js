@@ -79,7 +79,6 @@ myForm.addEventListener('submit', function(event) {
 
         myForm.className = "hidden";
         document.body.style.backgroundImage = `url(images/my-home.jpeg)`;
-        body.removeAttribute('community-center');
         body.className = "my-home";
         results = `
         Dear ${q1},<br><br>I have much to update you on.
@@ -87,10 +86,10 @@ myForm.addEventListener('submit', function(event) {
         Recently, I've taken a likin' to Haley despite her ${q2} personality and interest in ${q3}.
         One problem though, I'm already married to Elliot! Our ${q4} is very romantic, but I crave Haley's spice.
         I know it ain't right, but I gift her ${q5} every day to win her love...
-        The mayor once caught us ${q6}, but he won't say anything because I know of his relationship with Maggie! His ${q7} are in her room. Haha! It's quite spicy 'ere in Pelican Town ;)
+        The mayor once caught us ${q6}, but he won't say anything because I know of his relationship with Maggie! I found his ${q7}  in her room. Haha! It's quite spicy 'ere in Pelican Town ;)
         <br>
         <br>
-        I've been wondering, how's that ${q8} problem of yours been doin'? Can't wait to hear back from ya! 
+        I've been wondering, how's that ${q8} problem of yours doin'? Can't wait to hear back from ya! 
         <br>
         <br>
         From,
