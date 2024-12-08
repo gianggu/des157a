@@ -7,15 +7,15 @@
 
 }
 
-
-/*  Notes:
-
-- Create mult moving cloud divs
-- Insert answers with sentences
-- add different backgrounds
-- Overlay transition
-*/
-
+.toggleMusic {
+    width: 66px;
+    height: 55px;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    cursor: pointer;
+    z-index: 2;
+}
 
 .showing {
     display: block;
@@ -85,65 +85,60 @@ img {
     display: block;
 }
 
-@font-face {
-    font-family:'stardew_valleyregular';
-    src: url('../studio1/fonts/stardew_valley-webfont.woff2') format('woff2'),
-         url('../studio1/fonts/stardew_valley-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .cloud-container {
     position: relative;
-    /* height: 400px; */
     width: 100%;
-   /*  border: 1px solid black; */
 }
 
 .cloud {
     position: absolute;
-    /* width: 100%; */
-    /*animation: cloud-movement 30s infinite linear; */
     z-index: -1;
 }
 
 @keyframes cloud-movement {
-    0% {`
+    0% {
         transform: translateX(-100%);
     }
     100% {
-        transform: translateX(400%);
+        transform: translateX(500%);
     }
 }
 
 #back-cloud {
-    animation: cloud-movement 20s infinite ease-in-out;
-    animation-delay: 2s;
+    animation: cloud-movement 47s infinite ease-in-out;
+    top: 300px;
+    left: 75%;
+}
+
+#back-cloud2 {
+    animation: cloud-movement 60s infinite ease-in-out;
     top: 100px;
-    left: -100%;
+    left: 10%;
 }
 
 #cloud-crowd {
-    animation: cloud-movement 18s infinite ease-in-out;
-    animation-delay: 1s;
-    top: 200px;
-    left: -100%;
+    animation: cloud-movement 48s infinite ease-in-out;
+    top: 220px;
+    left: 20%;
 }
 
 #small-middle-cloud {
-    animation: cloud-movement 22s infinite ease-in-out;
-    animation-delay: 1s;
-    top: 400px;
-    left: -100%;
+    animation: cloud-movement 25s infinite ease-in-out;
+    top: 37px;
+    left: 60%;
 }
 
 #top-cloud {
-    animation: cloud-movement 16s infinite ease-in-out;
-    animation-delay: 1s;
-    top: 500px;
-    left: -100%;
+    animation: cloud-movement 30s infinite ease-in-out;
+    top: 50px;
+    left: 90%;
 }
  
+#cloud-crowd2 {
+    animation: cloud-movement 38s infinite ease-in-out;
+    top: 370px;
+    left: 70%;
+}
 /* form.showing {
     position: absolute;
     top: 20vh;
@@ -227,11 +222,12 @@ button {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 65px 45px;
+    padding: 60px 75px 65px;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
     transition-property: opacity, visibility;
     transition-duration: 1s;
     transition-timing-function: ease;
+    font-size: 1.5rem;
 }
