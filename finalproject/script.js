@@ -6,87 +6,27 @@
     const startBtn = document.querySelector('#stardew_madlibs');
     const body = document.querySelector('body');
 
+     function setupBackgroundMusic() {
+        const music = document.querySelector('.backgroundMusic');
+        const playmusic = document.querySelector('.toggleMusic');
 
-        const musicControl = document.querySelector('.music-control');
-        const toggleMusic = document.querySelector('.toggleMusic');
-        const backgroundMusic = document.querySelector('.backgroundMusic');
-    
-        let isMusicPlaying = false;
-    
-        function setupBackgroundMusic() {
-            // Initial check for autoplay
-            checkAutoplayStatus();
-    
-            // Event listener for music toggle
-            toggleMusic.addEventListener('click', toggleMusicPlay);
-    
-            // Event listener for form submit
-            myForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                // Your existing form submission logic here
+        let isPlaying = false;
+
+        window.addEventListener('load', function() {
+            music.play().catch((error) => {
+                console.warn('error', error);
             });
-    
-            // Event listener for start button
-            startBtn.addEventListener('click', function() {
-                // Your existing start button logic here
-            });
-        }
-    
-        function checkAutoplayStatus() {
-            if (backgroundMusic.canPlay()) {
-                backgroundMusic.play().catch(error => {
-                    console.warn('Autoplay not allowed:', error);
-                    // Fallback: Play after user interaction
-                    setTimeout(() => {
-                        backgroundMusic.play().catch(error => {
-                            console.error('Error playing audio:', error);
-                        });
-                    }, 500); // Wait for 500ms after page load
-                });
+        });
+
+        playmusic.addEventListener('click', function() {
+            if (isPlaying) {
+                music.pause();
             } else {
-                console.warn('Browser does not support autoplay');
+                music.play();
             }
-        }
-    
-        function toggleMusicPlay() {
-            if (isMusicPlaying) {
-                backgroundMusic.pause();
-                isMusicPlaying = false;
-                toggleMusic.src = 'images/music.png'; // Assuming this is the unplayed state
-            } else {
-                backgroundMusic.play();
-                isMusicPlaying = true;
-                toggleMusic.src = 'images/mute.png'; // Assuming this is the played state
-            }
-        }
-    
-        // Call the setup function when the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', setupBackgroundMusic);
-    
-
-    //  function setupBackgroundMusic() {
-    //     const music = document.querySelector('.backgroundMusic');
-    //     const playmusic = document.querySelector('.toggleMusic');
-
-    //     let isPlaying = false;
-
-    //     window.addEventListener('load', function() {
-    //         music.play().catch((error) => {
-    //             console.warn('error', error);
-    //         });
-    //     });
-
-    //     playmusic.addEventListener('click', function() {
-    //         if (isPlaying) {
-    //             music.pause();
-    //         } else {
-    //             music.play();
-    //         }
-    //         isPlaying = !isPlaying;
-    //     })
-    // }
-    
-    // setupBackgroundMusic();
+            isPlaying = !isPlaying;
+        })
+    }
 
     function createReturnButton() {
         // return to start button
@@ -228,8 +168,8 @@
 
             const backBtn = createBackBtn();
             madLibs.appendChild(backBtn);
-            madLibs.appendChild(returnToStartBtn);
-            return returnToStartBtn;
         }
     });
+    setupBackgroundMusic();
+
 })();

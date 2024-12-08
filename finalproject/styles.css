@@ -11,7 +11,7 @@
     width: 66px;
     height: 55px;
     position: absolute;
-    left: 10%;
+    left: 90%;
     top: 10%;
     cursor: pointer;
     z-index: 2;
@@ -64,7 +64,6 @@ body {
     background-size: cover;
     background-image: url('images/startscreen.png');
 }
-/* remove this header when clicked or hidden n z-axis 0 */
 
 .community-center {
     background-image: url('images/community-center.jpg');
