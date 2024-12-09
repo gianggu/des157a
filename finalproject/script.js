@@ -5,28 +5,20 @@
     const myForm = document.querySelector('form');
     const startBtn = document.querySelector('#stardew_madlibs');
     const body = document.querySelector('body');
+    const bgm = new Audio('sounds/bgm.mp3');
+    const playMusic = document.querySelector('.toggleMusic'); 
 
-     function setupBackgroundMusic() {
-        const music = document.querySelector('.backgroundMusic');
-        const playmusic = document.querySelector('.toggleMusic');
+    let notPlaying = true;
 
-        let isPlaying = false;
-
-        window.addEventListener('load', function() {
-            music.play().catch((error) => {
-                console.warn('error', error);
-            });
-        });
-
-        playmusic.addEventListener('click', function() {
-            if (isPlaying) {
-                music.pause();
-            } else {
-                music.play();
-            }
-            isPlaying = !isPlaying;
-        })
-    }
+    playMusic.addEventListener('click', function(){
+        if(notPlaying == false){
+            bgm.pause();
+            notPlaying = true;
+        } else {
+            bgm.play();
+            notPlaying = false;
+        }
+    });
 
     function createReturnButton() {
         // return to start button
