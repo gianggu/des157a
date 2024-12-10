@@ -27,6 +27,9 @@
 
     const leftSlider = document.getElementById("left_slider");    
     const rightSlider = document.getElementById("right_slider");
+    const prevBtn = document.getElementById('previous');
+    const nextBtn = document.getElementById('next');
+
 
     let counter  = 0;
     
@@ -34,7 +37,7 @@
         console.log('running function');
         const leftbg = leftSide[counter];
         const rightbg = rightSide[counter];
-        const center = rightSide[counter];
+        const center = rightSide[counter+1];
 
         leftSlider.style.backgroundImage = `url(images/${leftbg})`;
         rightSlider.style.backgroundImage = `url(images/${rightbg})`;
@@ -61,7 +64,7 @@
     changeSlide(enterLeft, enterRight);
 
 
-    document.getElementById('next').addEventListener('click', function() {
+    nextBtn.addEventListener('click', function() {
         if (counter == enterLeft.length) {
             counter = 0;
         }
@@ -76,7 +79,7 @@
         changeSlide(enterLeft, enterRight);
     });
     
-    document.getElementById('previous').addEventListener('click', function() {
+    prevBtn.addEventListener('click', function() {
         if (counter < 0) {
             counter = enterLeft.length - 1;
         }
@@ -84,10 +87,16 @@
             counter--;
         }
 
+        // if (counter == 0) {
+        //     prevBtn.classList.add('hidden');
+        // }
+        // else {
+        //     prevBtn.classList.add('showing');
+        // }
         document.querySelector('.placed').remove();
         leftSlider.removeAttribute('class');
         rightSlider.removeAttribute('class');
         changeSlide(enterLeft, enterRight);
     });
-
+``
 })();

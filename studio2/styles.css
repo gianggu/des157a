@@ -9,9 +9,23 @@ header {
     height: 100px;
 }
 
+button {
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: black;
+  color: white;
+}
+
+.showing {
+  display: contents;
+}
+
+.hidden {
+  display: none;
+}
 
 main {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 200px);
     display: grid;
     position: relative;
 }
@@ -58,7 +72,7 @@ img {
 }
 
 .animateRightImg {
-    animation: move-right 6s ease-in-out forwards;
+    animation: move-right 2s ease-in-out forwards;
 }
 
 .placed {

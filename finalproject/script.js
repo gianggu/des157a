@@ -54,7 +54,7 @@
 
         return backBtn;
     }
-``
+
 
     startBtn.addEventListener('click', function(event) {
         event.preventDefault();
