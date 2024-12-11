@@ -3,6 +3,7 @@
 
     const madLibs = document.querySelector('#madLibs');
     const myForm = document.querySelector('form');
+    const mail = document.querySelector('mail');
     const startBtn = document.querySelector('#stardew_madlibs');
     const body = document.querySelector('body');
     const bgm = new Audio('sounds/bgm.mp3');
@@ -77,10 +78,13 @@
             clickSound.play();
         
             myForm.className = "hidden";
+            mail.className = "hidden";
             game_start.className = "showing";
         });
 
     });
+
+
 
 
     myForm.addEventListener('submit', function(event) {

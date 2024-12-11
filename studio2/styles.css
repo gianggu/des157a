@@ -16,6 +16,11 @@ button {
   color: white;
 }
 
+.pressed {
+  background-color: white;
+  color: black;
+}
+
 .showing {
   display: contents;
 }
@@ -85,7 +90,6 @@ img {
     z-index: 2;
     animation: fadeIn 1s forwards;
 }
-
 
 @keyframes move-left {
     0% {

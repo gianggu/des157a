@@ -71,13 +71,18 @@
         else {
             counter++;
         }
-        
+
         document.querySelector('.placed').remove();
         leftSlider.removeAttribute('class');
         rightSlider.removeAttribute('class');
 
         changeSlide(enterLeft, enterRight);
     });
+
+    nextBtn.addEventListener('mousedown', function() {
+        nextBtn.classList.toggle('pressed');
+    });
+    
     
     prevBtn.addEventListener('click', function() {
         if (counter < 0) {

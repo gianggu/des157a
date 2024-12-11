@@ -208,6 +208,21 @@ button {
     border-color: #ecdd39;
 }
 
+#mail {
+    left: 50%;
+    transform: translate(-50%, 0);
+    animation: you-got-mail 4s infinite ease-in-out;
+}
+
+@keyframes you-got-mail {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(50%);
+    }
+}
+
 #madLibs {
     position: fixed;
     top: 50%;
