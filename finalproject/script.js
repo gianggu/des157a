@@ -72,20 +72,18 @@
         document.body.style.backgroundSize = 'cover';
         document.body.style.backgroundRepeat = 'no-repeat';
 
-        returnToStartBtn.addEventListener('click', function(event){
+        returnToStartBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+
 
             const clickSound = new Audio('sounds/clickSound.mp3');
             clickSound.play();
         
             myForm.className = "hidden";
-            mail.className = "hidden";
             game_start.className = "showing";
         });
 
     });
-
-
-
 
     myForm.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -105,28 +103,20 @@
         let results;
 
         if (q1 == '') {
-            results = "Please provide a verb";
             document.querySelector('#q1').focus();
         } else if (q2 == '') {
-            results = "Please provide a verb";
             document.querySelector('#q2').focus();
         } else if (q3 == '') {
-            results = "Please provide a continuous verb";
             document.querySelector('#q3').focus();
         } else if (q4 == '') {
-            results = "Please provide an adjective";
             document.querySelector('#q4').focus();
         } else if (q5 == '') {
-            results = "Please provide a verb";
             document.querySelector('#q5').focus();
         } else if (q6 == '') {
-            results = "Please provide a verb";
             document.querySelector('#q6').focus();
         } else if (q7 == '') {
-            results = "Please  provide a continuous verb";
             document.querySelector('#q7').focus();
         } else if (q8 == '') {
-            results = "Please provide an adjective";
             document.querySelector('#q8').focus();    
         } else {
             myForm.className = "hidden";

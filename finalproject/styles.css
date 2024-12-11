@@ -211,9 +211,13 @@ button {
 #mail {
     left: 50%;
     transform: translate(-50%, 0);
-    animation: you-got-mail 4s infinite ease-in-out;
+    display: none;
+    /* currently unable to get it to appear at the right time, display none is because it covers the text box and doesnt let users type */
 }
 
+.incoming_mail {
+    animation: you-got-mail 4s infinite ease-in-out;
+}
 @keyframes you-got-mail {
     0% {
         transform: translateY(-100%);
@@ -222,6 +226,7 @@ button {
         transform: translateY(50%);
     }
 }
+
 
 #madLibs {
     position: fixed;
