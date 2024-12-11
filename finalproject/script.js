@@ -35,6 +35,12 @@
          return returnToStartBtn;
     }
 
+    function formSection() {
+        document.body.style.backgroundImage = `url('images/community-center1.jpg')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundRepeat = 'no-repeat';
+    }
+    
     function createBackBtn() {
         const backBtn = document.createElement('button');
         backBtn.textContent = "Back";
@@ -51,11 +57,11 @@
 
             myForm.className = "showing";
             madLibs.className = "hidden";
+            formSection();
         });
 
         return backBtn;
     }
-
 
     startBtn.addEventListener('click', function(event) {
         event.preventDefault();
@@ -65,16 +71,12 @@
         
         game_start.className = "hidden";
         myForm.className = "showing";
+        formSection();
 
         const returnToStartBtn = createReturnButton();
-        
-        document.body.style.backgroundImage = `url('images/community-center1.jpg')`;
-        document.body.style.backgroundSize = 'cover';
-        document.body.style.backgroundRepeat = 'no-repeat';
 
         returnToStartBtn.addEventListener('click', function(event) {
             event.preventDefault();
-
 
             const clickSound = new Audio('sounds/clickSound.mp3');
             clickSound.play();
@@ -120,7 +122,7 @@
             document.querySelector('#q8').focus();    
         } else {
             myForm.className = "hidden";
-            document.body.style.backgroundImage = `url(images/my-home.jpeg)`;
+            document.body.style.backgroundImage = `url(images/my-home.jpg)`;
             body.className = "my-home";
             
             results = `
@@ -154,6 +156,7 @@
 
             const backBtn = createBackBtn();
             madLibs.appendChild(backBtn);
+            
         }
     });
     setupBackgroundMusic();
