@@ -39,6 +39,7 @@ body {
 }
 
 #stardew_madlibs {
+    cursor: pointer;
     background-image: url('images/stardew_madlibs.png');
     background-size: cover;
     box-sizing: border-box; 
@@ -176,6 +177,7 @@ button {
     margin: auto;
     background-color:bisque;
     border: 4px solid #6f3e14;
+    cursor: pointer;
 }
 
 /* BUTTONS UI*/
@@ -209,6 +211,7 @@ button {
   }
 
 #submit {
+    cursor: pointer;
     width: 165px;
     height: 50px;
     display: block;
