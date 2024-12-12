@@ -27,12 +27,11 @@
         returnToStartBtn.textContent = "Return To Start";
 
          // Position the button in the top-left corner of myForm
-         returnToStartBtn.style.position = 'absolute';
-         returnToStartBtn.style.top = '1em';
-         returnToStartBtn.style.left = '-10em';
+         returnToStartBtn.id = "restart";
 
-         myForm.appendChild(returnToStartBtn);
+         body.appendChild(returnToStartBtn);
          return returnToStartBtn;
+
     }
 
     function formSection() {
@@ -47,8 +46,8 @@
         backBtn.className = "back-button";
 
         backBtn.style.position = 'relative';
-        backBtn.style.top = '10%';
-        backBtn.style.left = '65%';
+        backBtn.style.top = '5%';
+        backBtn.style.left = '50%';
 
         backBtn.addEventListener('click', function() {
 
@@ -82,6 +81,8 @@
             clickSound.play();
         
             myForm.className = "hidden";
+            madLibs.classList = "hidden";
+            returnToStartBtn.classList = "hidden";
             game_start.className = "showing";
         });
 
@@ -121,44 +122,50 @@
         } else if (q8 == '') {
             document.querySelector('#q8').focus();    
         } else {
-            myForm.className = "hidden";
-            document.body.style.backgroundImage = `url(images/my-home.jpg)`;
-            body.className = "my-home";
-            
-            results = `
-            Dear ${q1},<br><br>I have much to update you on.
-            Since moving here, I been very busy with getting the farm goin' that it's already been 2 years!
-            Recently, I've taken a likin' to Haley despite her ${q2} personality and interest in ${q3}.
-            One problem though, I'm already married to Elliot! Our ${q4} is very romantic, but I crave Haley's spice.
-            I know it ain't right, but I gift her ${q5} every day to win her love...
-            The mayor once caught us ${q6}, but he won't say anything because I know of his relationship with Maggie! I found his ${q7}  in her room. Haha! It's quite spicy 'ere in Pelican Town ;)
-            <br>
-            <br>
-            I've been wondering, how's that ${q8} problem of yours doin'? Can't wait to hear back from ya! 
-            <br>
-            <br>
-            From,
-            <br> 
-            your ol' bud
-            `;
 
-            madLibs.innerHTML = results;
-            madLibs.className = "showing";
-            
-            document.querySelector('#q1').value = '';
-            document.querySelector('#q2').value = '';
-            document.querySelector('#q3').value = '';
-            document.querySelector('#q4').value = '';
-            document.querySelector('#q5').value = '';
-            document.querySelector('#q6').value = '';
-            document.querySelector('#q7').value = '';
-            document.querySelector('#q8').value = '';
+            // place the letter on doc above top of screen
+            // use setTimeout to wait 100ms 
+            // add class to animate the letter down
+            // inside setTimeout at the end, add another setTimeout that waits however long it takes for that animation to run
+            // Place of the results in the setTimeout
 
-            const backBtn = createBackBtn();
-            madLibs.appendChild(backBtn);
             
+                myForm.className = "hidden";
+                document.body.style.backgroundImage = `url(images/my-home.jpg)`;
+                body.className = "my-home";
+                
+                results = `
+                Dear ${q1},<br><br>I have much to update you on.
+                Since moving here, I been very busy with getting the farm goin' that it's already been 2 years!
+                Recently, I've taken a likin' to Haley despite her ${q2} personality and interest in ${q3}.
+                One problem though, I'm already married to Elliot! Our ${q4} is very romantic, but I crave Haley's spice.
+                I know it ain't right, but I gift her ${q5} every day to win her love...
+                The mayor once caught us ${q6}, but he won't say anything because I know of his relationship with Maggie! I found his ${q7}  in her room. Haha! It's quite spicy 'ere in Pelican Town ;)
+                <br>
+                <br>
+                I've been wondering, how's that ${q8} problem of yours doin'? Can't wait to hear back from ya! 
+                <br>
+                <br>
+                From,
+                <br> 
+                your ol' bud
+                `;
+              
+                madLibs.innerHTML = results;
+                madLibs.className = "showing";
+                
+                document.querySelector('#q1').value = '';
+                document.querySelector('#q2').value = '';
+                document.querySelector('#q3').value = '';
+                document.querySelector('#q4').value = '';
+                document.querySelector('#q5').value = '';
+                document.querySelector('#q6').value = '';
+                document.querySelector('#q7').value = '';
+                document.querySelector('#q8').value = '';
+              
+                const backBtn = createBackBtn();
+                madLibs.appendChild(backBtn);
+              
         }
     });
-    setupBackgroundMusic();
-
 })();

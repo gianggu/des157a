@@ -36,6 +36,13 @@ body {
     font-size: 1.7rem;
 }
 
+#restart {
+    position: absolute;
+    top: 2.6em;
+    left: 4em;
+    z-index: 100;
+}
+
 #stardew_madlibs {
     background-image: url('images/stardew_madlibs.png');
     background-size: cover;
@@ -71,13 +78,6 @@ body {
     background-repeat: no-repeat;
     position: absolute;
 }
-
-/* .my-home {
-    background-image: url('images/my-home.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-} */
 
 img {
     max-width: 100%;
@@ -138,22 +138,6 @@ img {
     top: 370px;
     left: 70%;
 }
-/* form.showing {
-    position: absolute;
-    top: 20vh;
-    left: 30vw;
-    background-image: url('images/questions_frame.png');
-    width: 850px;
-    height: 747px;
-    background-size: cover;
-    padding: 50px 50px 50px 100px;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    transition-property: opacity, visibility;
-    transition-duration: 1s;
-    transition-timing-function: ease;
-} */
 
 form.showing {
     position: fixed;
@@ -200,24 +184,30 @@ button {
     display: block;
     margin: auto;
     background-color:bisque;
-    border: 4px solid #6f3e14;;
+    border: 4px solid #6f3e14;
 }
 
+.back-button {
+    transform: translate(-50%, -50%);
+
+}
 #submit:hover {
     background-color: rgb(255, 250, 234);
     border-color: #ecdd39;
 }
 
-#mail {
+#mail img{
+    display: contents;
     left: 50%;
     transform: translate(-50%, 0);
-    display: none;
+    /* display: none; */
     /* currently unable to get it to appear at the right time, display none is because it covers the text box and doesnt let users type */
 }
 
-.incoming_mail {
+.incoming-mail {
     animation: you-got-mail 4s infinite ease-in-out;
 }
+
 @keyframes you-got-mail {
     0% {
         transform: translateY(-100%);
@@ -241,12 +231,12 @@ button {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 60px 75px 65px;
+    padding: 70px 75px 65px;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
     transition-property: opacity, visibility;
     transition-duration: 1s;
     transition-timing-function: ease;
-    font-size: 1.5rem;
+    font-size: 1.55rem;
 }
