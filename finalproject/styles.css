@@ -36,13 +36,6 @@ body {
     font-size: 1.7rem;
 }
 
-#restart {
-    position: absolute;
-    top: 2.6em;
-    left: 4em;
-    z-index: 100;
-}
-
 #stardew_madlibs {
     background-image: url('images/stardew_madlibs.png');
     background-size: cover;
@@ -175,6 +168,29 @@ label {
     margin-top: 50px;
 }
 
+button {
+    width: 200px;
+    height: 50px;
+    display: block;
+    margin: auto;
+    background-color:bisque;
+    border: 4px solid #6f3e14;
+}
+
+/* BUTTONS UI*/
+
+#restart {
+    position: absolute;
+    top: 2.6em;
+    left: 4em;
+    z-index: 100;
+}
+
+#restart:hover {
+    background-color: rgb(255, 250, 234);
+    border-color: #ecdd39;
+}
+
 #submit {
     width: 165px;
     height: 50px;
@@ -187,19 +203,20 @@ label {
     margin-top: 30px;
 }
 
-button {
-    width: 200px;
-    height: 50px;
-    display: block;
-    margin: auto;
-    background-color:bisque;
-    border: 4px solid #6f3e14;
+#submit:hover {
+    background-color: rgb(255, 250, 234);
+    border-color: #ecdd39;
 }
 
 .back-button {
     transform: translate(-50%, -50%);
-
 }
+
+.back-button:hover {
+    background-color: rgb(255, 250, 234);
+    border-color: #ecdd39;
+}
+
 #submit:hover {
     background-color: rgb(255, 250, 234);
     border-color: #ecdd39;
