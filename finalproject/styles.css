@@ -15,6 +15,9 @@
     top: 10%;
     cursor: pointer;
     z-index: 2;
+    margin: auto;
+    background-color:bisque;
+    border: 4px solid #6f3e14;
 }
 
 .showing {
@@ -188,6 +191,22 @@ button {
     background-color: rgb(255, 250, 234);
     border-color: #ecdd39;
 }
+
+.restart::after {
+    filter: blur(5px);
+    opacity: 0;
+    animation: glow 1s infinite;
+}
+
+@keyframes glow {
+    0% { opacity: 0; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0; }
+  }
+
+#restart.active::after {
+    opacity: 1;
+  }
 
 #submit {
     width: 165px;

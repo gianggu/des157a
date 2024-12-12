@@ -17,9 +17,13 @@
         if(notPlaying == false){
             bgm.pause();
             notPlaying = true;
+            document.querySelector('.toggleMusic').src = 'images/noMusic.png';
+
         } else {
             bgm.play();
             notPlaying = false;
+            document.querySelector('.toggleMusic').src = 'images/yesMusic.png';
+
         }
     });
 
@@ -126,6 +130,9 @@
         } else {
 
             mail.classList="incoming-mail";
+            const gotMail = new Audio('sounds/gotMail.mp3');
+            gotMail.play();
+
             myForm.className = "hidden";
 
 
@@ -165,7 +172,7 @@
               
                 const backBtn = createBackBtn();
                 madLibs.appendChild(backBtn);
-            }, 4000);
+            }, 3000);
             // place the letter on doc above top of screen
             // use setTimeout to wait 100ms 
             // add class to animate the letter down
