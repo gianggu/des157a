@@ -25,8 +25,7 @@
 }
 
 .hidden {
-    display: none;
-    /* visibility: hidden; */
+    visibility: hidden;
     opacity: 0;
     z-index: -1;
 }
@@ -146,7 +145,9 @@ form.showing {
     background-position: center;
     background-repeat: no-repeat;
     padding: 0 20px 40px;
-    
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
 }
 
 .grid {
@@ -157,9 +158,6 @@ form.showing {
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    transition-property: opacity, visibility;
-    transition-duration: 1s;
-    transition-timing-function: ease;
 }
 
 label {
@@ -222,27 +220,29 @@ button {
     border-color: #ecdd39;
 }
 
-#mail img{
-    display: contents;
+#mail img {
+    display:block;
+    position: absolute;
+    z-index: 200;
     left: 50%;
-    transform: translate(-50%, 0);
-    /* display: none; */
-    /* currently unable to get it to appear at the right time, display none is because it covers the text box and doesnt let users type */
+    top: -400px;
+    transform: translate(-50%,0);
 }
 
-.incoming-mail {
-    animation: you-got-mail 4s infinite ease-in-out;
+#mail.incoming-mail img {
+    animation: you-got-mail 4s ease-in-out forwards;
 }
 
 @keyframes you-got-mail {
     0% {
-        transform: translateY(-100%);
+        /* transform: translateY(-20%); */
+        top: -400px;
     }
     100% {
-        transform: translateY(50%);
+        /* transform: translateY(50%); */
+        top: 20%;
     }
 }
-
 
 #madLibs {
     position: fixed;

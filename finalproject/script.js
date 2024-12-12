@@ -1,13 +1,15 @@
 (function () {
     "use strict";
 
-    const madLibs = document.querySelector('#madLibs');
-    const myForm = document.querySelector('form');
-    const mail = document.querySelector('mail');
-    const startBtn = document.querySelector('#stardew_madlibs');
     const body = document.querySelector('body');
     const bgm = new Audio('sounds/bgm.mp3');
     const playMusic = document.querySelector('.toggleMusic'); 
+
+
+    const madLibs = document.querySelector('#madLibs');
+    const myForm = document.querySelector('form');
+    const mail = document.querySelector('#mail');
+    const startBtn = document.querySelector('#stardew_madlibs');
 
     let notPlaying = true;
 
@@ -123,14 +125,12 @@
             document.querySelector('#q8').focus();    
         } else {
 
-            // place the letter on doc above top of screen
-            // use setTimeout to wait 100ms 
-            // add class to animate the letter down
-            // inside setTimeout at the end, add another setTimeout that waits however long it takes for that animation to run
-            // Place of the results in the setTimeout
+            mail.classList="incoming-mail";
+            myForm.className = "hidden";
 
-            
-                myForm.className = "hidden";
+
+            setTimeout(function(){
+                mail.className = "hidden";
                 document.body.style.backgroundImage = `url(images/my-home.jpg)`;
                 body.className = "my-home";
                 
@@ -165,6 +165,15 @@
               
                 const backBtn = createBackBtn();
                 madLibs.appendChild(backBtn);
+            }, 4000);
+            // place the letter on doc above top of screen
+            // use setTimeout to wait 100ms 
+            // add class to animate the letter down
+            // inside setTimeout at the end, add another setTimeout that waits however long it takes for that animation to run
+            // Place of the results in the setTimeout
+
+            
+                
               
         }
     });
