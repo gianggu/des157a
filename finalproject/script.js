@@ -147,7 +147,7 @@
                 Recently, I've taken a likin' to Haley despite her ${q2} personality and interest in ${q3}.
                 One problem though, I'm already married to Elliot! Our ${q4} is very romantic, but I crave Haley's spice.
                 I know it ain't right, but I gift her ${q5} every day to win her love...
-                The mayor once caught us ${q6}, but he won't say anything because I know of his relationship with Maggie! I found his ${q7}  in her room. Haha! It's quite spicy 'ere in Pelican Town ;)
+                The mayor once caught us ${q6}, but he won't say anything because I know of his relationship with Marnie! I found his ${q7}  in her room. Haha! It's quite spicy 'ere in Pelican Town ;)
                 <br>
                 <br>
                 I've been wondering, how's that ${q8} problem of yours doin'? Can't wait to hear back from ya! 
