@@ -29,7 +29,7 @@
     const rightSlider = document.getElementById("right_slider");
     const prevBtn = document.getElementById('previous');
     const nextBtn = document.getElementById('next');
-
+``
 
     let counter = 0;
     
@@ -67,11 +67,11 @@
     }
     changeSlide(enterLeft, enterRight);
 
-
     nextBtn.addEventListener('click', function() {
-        if (counter == enterLeft.length) {
+        if (counter == enterLeft.length-1) {
             counter = 0;
             alert(`You're at the end of the presentation!`);
+            alert('Returning to start...');
 
         }
         else {
@@ -86,9 +86,10 @@
     });
       
     prevBtn.addEventListener('click', function() {
-        if (counter < 0) {
+        if (counter == 0) {
             counter = enterLeft.length - 1;
             alert(`You're at the start of the presentation!`);
+            alert('I guess you can skip to the end...');
         }
         else {
             counter--;
