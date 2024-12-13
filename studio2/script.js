@@ -16,9 +16,9 @@
     ];
 
     const textInfo = [
-        'Now: Flying',
-        'Now: Eating ',
-        'Now: ??'
+        'Now Landing...',
+        'Now Eating :3 ',
+        'Now Adventuring!'
     ];
 
 
@@ -31,23 +31,27 @@
     const nextBtn = document.getElementById('next');
 
 
-    let counter  = 0;
+    let counter = 0;
     
     function changeSlide(leftSide, rightSide) {
         console.log('running function');
         const leftbg = leftSide[counter];
         const rightbg = rightSide[counter];
-        const center = rightSide[counter+1];
+        const center = rightSide[counter];
 
         leftSlider.style.backgroundImage = `url(images/${leftbg})`;
         rightSlider.style.backgroundImage = `url(images/${rightbg})`;
 
-        setTimeout(function(){
+        setTimeout(function() {
+            info.textContent = textInfo[counter];
+        }, 1000);
+
+        setTimeout(function() {
             //animate in the photos
             leftSlider.className = "animateLeftImg";
             rightSlider.className = "animateRightImg";
             //wait 3 seconds
-            setTimeout(function(){
+            setTimeout(function() {
                 //create a photo element
                 const photo = document.createElement('img');
                 //assign the src
@@ -57,9 +61,9 @@
                 //put the photo in the main element
                 main.appendChild(photo);
                 //change the text at the top of the page...
-                info.textContent = textInfo[counter];
-            }, 3000);
-        }, 2000);
+                // info.textContent = textInfo[counter];
+            }, 1200);
+        }, 1000);
     }
     changeSlide(enterLeft, enterRight);
 
@@ -67,6 +71,8 @@
     nextBtn.addEventListener('click', function() {
         if (counter == enterLeft.length) {
             counter = 0;
+            alert(`You're at the end of the presentation!`);
+
         }
         else {
             counter++;
@@ -78,15 +84,11 @@
 
         changeSlide(enterLeft, enterRight);
     });
-
-    nextBtn.addEventListener('mousedown', function() {
-        nextBtn.classList.toggle('pressed');
-    });
-    
-    
+      
     prevBtn.addEventListener('click', function() {
         if (counter < 0) {
             counter = enterLeft.length - 1;
+            alert(`You're at the start of the presentation!`);
         }
         else {
             counter--;
@@ -103,5 +105,5 @@
         rightSlider.removeAttribute('class');
         changeSlide(enterLeft, enterRight);
     });
-``
+
 })();
