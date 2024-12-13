@@ -6,6 +6,11 @@ body {
     justify-self: center;
 }
 
+.body-with-bg {
+    background-image: url('images/dice-bg.png');
+    background-size:cover;
+    background-repeat: none;
+}
 #gamecontrol {
     justify-items: center;
     font-size: 30px;
@@ -23,11 +28,14 @@ button {
 }
 
 #game {
+    display: flex;
     font-size: 20px;
 }
 
 img {
     display: block;
+    width: 300px;
+    height: 300px;
 }
 
 .center {

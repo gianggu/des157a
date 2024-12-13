@@ -2,6 +2,7 @@
     'use strict'
     console.log('reading JS');
 
+    const body = document.querySelector('body');
     const startGame = document.querySelector('#startgame');
     const gameControl = document.querySelector('#gamecontrol');
     const game = document.querySelector('#game');
@@ -26,6 +27,9 @@
 
         console.log(gameData.index);
         gameData.index = Math.round(Math.random() );
+        // document.body.style.backgroundImage = "url('images/dice-bg.png')";
+        body.className = "body-with-bg";
+        // gameControl.style.padding = '10px';
         gameControl.style.border = 'none';
         gameControl.style.backgroundImage = 'none';
         gameControl.innerHTML = '<h2>Collect the stars!</h2>';
@@ -33,6 +37,8 @@
         game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
 
         document.getElementById('roll').addEventListener('click', function() {
+
+            gameControl.style.padding = '10px';
 
             throwDice();
             console.log('Roll the dice!');
@@ -42,12 +48,11 @@
     });
     
     function setUpTurn() {
-        actionArea.innerHTML = '<button id="quit">Wanna Quit?</button';
+        actionArea.innerHTML = '<button id="quit">Wanna Quit?</button>';
 
         document.getElementById('quit').addEventListener('click', function() {
             location.reload();
         });
-        
     }
 
     function throwDice() {
@@ -58,8 +63,8 @@
 
         console.log(gameData.dice[gameData.roll2-1]);
 
-        game.innerHTML += `<img src="${gameData.dice[gameData.roll1-1]}">
-        <img src="${gameData.dice[gameData.roll2-1]}">`;
+        game.innerHTML += `<img src=" ${gameData.dice[gameData.roll1-1] }">
+        <img src=" ${gameData.dice[gameData.roll2-1]} ">`;
         gameData.rollSum = gameData.roll1 + gameData.roll2;
         console.log(gameData);
 
@@ -106,9 +111,10 @@
         if(gameData.score[gameData.index] > gameData.gameEnd) {
             score.innerHTML = `<h1>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h1>`;
             score.className = "center";
-            actionArea.innerHTML = '';
-            document.getElementById('quit').innerHTML = "start a new game?";
+            actionArea.innerHTML = '<button id="quit">Start a new game?</button>';
+            console.log('Action Area InnerHTML changed:', actionArea.innerHTML);
 
+            
             gameControl.innerHTML = '';
         } 
         else {
@@ -122,3 +128,4 @@
     }
 
 })();
+``
