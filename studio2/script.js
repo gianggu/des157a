@@ -72,9 +72,6 @@
             counter = 0;
             alert(`You're at the end of the presentation!`);
             alert('Returning to start...');
-
-        }
-        else {
             counter++;
         }
 
