@@ -3,76 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiment 2</title>
+    <title>Fortune Teller Game</title>
+    <style>
+        #game-content {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    
-    <h1>Experiment 2</h1>
-
-    <h2>Last Chance of Fortune</h2>
-
-
-    <p>
-        This is a game that will tell you your fortune! Your answers will determine your fate.  
-    </p>
-
-    <p>
-        Enter inspect mode and open your console to fully experience the game of fortune.
-    </p>
-
+    <div id="game-content">
+        <h1>Fortune Teller Game</h1>
+        <p>This is a game that will tell you your fortune! Your answers will determine your fate.</p>
+        <button onclick="startGame()">Start Game</button>
+        <p id="result"></p>
+    </div>
 
     <script>
+        // This program is a fortune-telling game. Players will answer questions, and based on their choices, they will receive fortunes or face consequences.
 
-        var firstChoice = prompt("You wake up secluded in an unfamiliar room. What is the first thing you do? A. Panic  B. Explore room", "Answer quick!").toLowerCase();
+        const button = document.querySelector('button');
+        const result = document.getElementById('result');
+        let playerChoices = [];
+        result.style.fontSize = '16px';
 
-        if (firstChoice === 'panic' || firstChoice === 'a') {
 
-            console.log("You hyperventilated and died. Stay calm next time.");
+        function startGame() {
+            result.textContent = 'Welcome to Last Chance of Fortune! Please wait for your turn...';
+            button.style.display = "none";
 
-        }   else if (firstChoice == 'explore room' || firstChoice == 'B') {
+            setTimeout(showFirstQuestion, 2000);
+        }
 
-            for (let i = 1; i <= 8; i++) {
-                
-                console.log(`Card ${i}`);
-            }
-
-            var secondChoice = prompt("You find cards laid out from 1-8. Which number are you picking? ");
+        function showFirstQuestion() {
+            var firstChoice = prompt("You wake up secluded in an unfamiliar room. What is the first thing you do? A. Panic  B. Explore room", "Answer quick!").toLowerCase();
+            playerChoices.push(firstChoice);
             
-                if (secondChoice ===  "1" || secondChoice ===  "3" || secondChoice ===  "5" || secondChoice ===  "7") {
+            if (firstChoice === 'panic' || firstChoice === 'a') {
+                showResult('You hyperventilated and died. Stay calm next time.');
+            } else if (firstChoice === 'explore room' || firstChoice === 'b') {
+                showCardDeck();
+            } else {
+                showResult('ERROR: Answer with given options.');
+            }
+        }
 
-                    console.log('You have claimed mildly disappointing luck for the next 2 years. Sorry...');
-
-                }   else if (secondChoice ===  "2" || secondChoice ===  "4" || secondChoice ===  "6" || secondChoice ===  "8") {
-
-                    console.log('You have claimed good luck! Kind of. Like you may have a chance of gaining $100 today... tomorrow, or maybe not, perhaps.');
+        function showCardDeck() {
+            result.textContent = 'You find cards laid out from 1-8. Which number are you picking?';
+            setTimeout(() => {
+                var secondChoice = prompt().toLowerCase();
+                playerChoices.push(secondChoice);
+                
+                if (secondChoice === "1" || secondChoice === "2" || secondChoice === "5" || secondChoice === "8") {
+                    showResult('You have claimed mildly disappointing luck for the next 2 years. Sorry...');
+                    setTimeout(nextStep, 3000);
+                } else if (secondChoice === "3" || secondChoice === "4" || secondChoice === "6" || secondChoice === "7") {
+                    showResult('You have claimed good luck! Kind of. Like you may have a chance of gaining $100 today... tomorrow, or maybe not, perhaps.');
+                } else {
+                    showResult('Invalid choice. Please choose a number between 1 and 8.');
+                    setTimeout(() => {
+                        showCardDeck();
+                    }, 1000);
                 }
-
-        }   else {
-
-            console.log("ERROR: Answer with given options.")
+            }, 2000);
         }
 
-        console.log("Alright. I feel bad. You get one more chance of good luck.");
+        function showResult(message) {
+            result.textContent = message;
+        }
 
-        var colors = ["red", "blue", "yellow"];
+        function nextStep() {
+            result.textContent = 'Alright. I feel bad. You get one more chance of good luck.';
+            setTimeout(colorGame, 2500);
+        }
 
+        function showButton() {
+            button.style.display = "";
+            result.style.color = 'black';
+        }
 
-    const maxAttempts = 3;
-    let attempts = 0;
-
-    while (attempts < maxAttempts) {
-        const guess = prompt(`If you guess the PRIMARY color I am thinking of, you will win and gain 100,000 aura.\n\nWhat is your pick?`);
-
-        if (colors.includes(guess)) {
-            console.log("Congratulations! You won 100,000 aura!");
+        function colorGame() {
+        const colors = ["red"];
+        let attempts = 1;
+        let winningColor; // Store the winning color
+   
+        winningColor = colors[Math.floor(Math.random() * colors.length)]; // Choose a random winning color
+        let finalChoice;
+        
+        // Get the user's final choice
+        finalChoice = prompt("If you guess the PRIMARY color I am thinking of, you will win and gain 100,000 aura. BUT you're only granted 2 tries. \n\nWhat is your pick?").toLowerCase();
+        
+        if (attempts < 2 && finalChoice === winningColor) {
+            showResult(`Congratulations! You won 100,000 aura! The color was ${winningColor}.`);
+            showButton();
+            result.style.color = winningColor;
+            result.style.fontSize = '30px';
+        } else if (attempts < 2 && finalChoice != winningColor) {
+            showResult(`Last try!`);
+            prompt("If you guess the PRIMARY color I am thinking of, you will win and gain 100,000 aura. BUT you're only granted 2 tries. \n\nWhat is your pick?").toLowerCase();
         } else {
-            console.log(`Sorry, incorrect. Try again.`);
-            attempts++;
+            showResult(`${winningColor}You were wrong, game over. Better luck next time! But it seems like you don't have much of that. Hah! Ha! Haaa`);
+            showButton();
+
         }
+    } 
+
+    function showResult(message) {
+        result.textContent = message;
     }
 
-console.log("Game over. Better luck next time! Hahahaaa");
-    
     </script>
 </body>
 </html>
