@@ -13,16 +13,15 @@
         <date>Dec. 13, 2024</date>
     </header>
 
+    <section id="profiles">
+        <h2>Name: Lloyd Wheeler</h2>
+        <p>Qualifications: Design Professor who teaches UI/UX fundamentals, has career experience in web and UI/UX design, likes to play Stardew Valley :).</p>
+        
+        <h2>Name: Samantha Mah</h2>
+        <p>Qualifications: Undergrad Design Tutor, has taken DES157A, has created similar projects.</p>
+    </section>
+
     <article class="report">
-
-        <section id="profiles">
-            <h2>Name: Lloyd Wheeler</h2>
-            <p>Qualifications: Design Professor who teaches UI/UX fundamentals, has career experience in web and UI/UX design, likes to play Stardew Valley :).</p>
-            
-            <h2>Name: Samantha Mah</h2>
-            <p>Qualifications: Undergrad Design Tutor, has taken DES157A, has created similar projects.</p>
-        </section>
-
         <div class="tests">
             <h2>Tasks Tested</h2>
 
@@ -43,9 +42,21 @@
             <p>Users have the option to go back to different stages of the game.</p>
 
 
-            <h3>Weak Points:</h3>
-            <p>There is no way for the user to backtrack in their actions if were to want to change something.</p>
+            <h3>Weak Points and Improvements:</h3>
+            <p>The music button is not noticable as it is now and there is no indiciation for the mode it is on (on/off).</p>
+
+            <div class="images">
+                <img src="report-imgs/startscreen-before.jpg" width="300" height="300">
+                <img src="report-imgs/startscreen-after.jpg" width="300" height="300">
+            </div>
+
             <p>The restart button and back button should switch locations for better usability.</p>
+
+            <div class="images">
+                <img src="report-imgs/back-return-switched.jpg" width="400" height="auto">
+                <img src="report-imgs/back-return-switched.jpg" width="400" height="auto">
+            </div>
+
             <p>The restart button is only appearing on one overlay but it should be on two of the overlays.</p>
             <p>The start screen's "Stardew Madlibs" button is not as intuitive to press. Consider adding a button or some feature that would make it more obvious to users that it should be pressed.</p>
             <p>There is some space that makes the screen scrollable even though there is no content which could cause confusion to the users.</p>
@@ -56,6 +67,10 @@
         body {
             padding: 2rem;
             max-width: 80%;
+        }
+
+        body p {
+            font-size: 1.2rem;
         }
 
         header h1 {
@@ -70,10 +85,19 @@
             font-size: 2rem;
         }
 
-        article p {
-            font-size: 1.2rem;
-
+        .images {
+            display: flex;
+            flex-direction: row;
         }
+        img {
+            display: block;
+            padding: 10px 30px;
+        }
+
+        img:first-of-type {
+            padding-left: 0;
+        }
+
     </style>
 </body>
 </html>

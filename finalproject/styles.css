@@ -248,7 +248,7 @@ button {
     position: absolute;
     z-index: 200;
     left: 50%;
-    top: -420px;
+    top: -450px;
     transform: translate(-50%,0);
 }
 
