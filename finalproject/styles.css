@@ -242,12 +242,13 @@ button {
     border-color: #ecdd39;
 }
 
+/* LETTER TRANSITION */
 #mail img {
     display:block;
     position: absolute;
     z-index: 200;
     left: 50%;
-    top: -400px;
+    top: -420px;
     transform: translate(-50%,0);
 }
 
